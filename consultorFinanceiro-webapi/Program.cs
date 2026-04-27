@@ -90,7 +90,7 @@ builder.Services.AddCors(options =>
          policy =>
          {
              policy
-                 .WithOrigins("http://localhost:5173")
+                 .SetIsOriginAllowed(origin => origin.Contains("vercel.app"))
                  .AllowAnyHeader()
                  .AllowAnyMethod()
                  .AllowCredentials();
