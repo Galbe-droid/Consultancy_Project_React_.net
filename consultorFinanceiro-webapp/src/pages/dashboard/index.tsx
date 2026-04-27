@@ -21,16 +21,17 @@ export default function Dashboard() {
 
 
   useEffect(() => {
-    if(user){
-      // eslint-disable-next-line react-hooks/set-state-in-effect
-      setIndexInfo({
-        name: user.name,
-        surName: user.surName,
-        profit: minimalTransactions.reduce((acc, t) => { return t.transactionType === 0 ? acc + t.amount : acc;}, 0),
-        expanses: minimalTransactions.reduce((acc, t) => { return t.transactionType === 1 ? acc + t.amount : acc;}, 0),
-        balance: minimalTransactions.reduce((acc, t) => { return t.transactionType === 0 ? acc + t.amount : acc - t.amount}, 0)
-      });
+    if(!user){
+      return;
     }
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setIndexInfo({
+      name: user.name,
+      surName: user.surName,
+      profit: minimalTransactions.reduce((acc, t) => { return t.transactionType === 0 ? acc + t.amount : acc;}, 0),
+      expanses: minimalTransactions.reduce((acc, t) => { return t.transactionType === 1 ? acc + t.amount : acc;}, 0),
+      balance: minimalTransactions.reduce((acc, t) => { return t.transactionType === 0 ? acc + t.amount : acc - t.amount}, 0)
+    });
     getMinimalTransactions().then(setMinimalTransactions);
   }, [minimalTransactions, user])
 
@@ -51,7 +52,8 @@ export default function Dashboard() {
         <SmallCard title="Saídas" value={mapDecimals(indexInfo.expanses)}/>
 
         <SmallCard title="Saldo" value={mapDecimals(indexInfo.balance)}/>
-
+      </Grid>
+      <Grid container spacing={2}>
         <Grid size={{ xs:12, md:4 }}>
           <Card sx={{ background: "#1e1e1e" }}>
             <CardContent>
