@@ -1,4 +1,4 @@
-import { Typography, Grid, Card, CardContent } from "@mui/material";
+import {Typography, Grid, Card, CardContent, Box} from "@mui/material";
 import DashboardLayout from "../layout/DashboardLayout";
 import UsersTable from "./userTable";
 import SmallCard from "../../components/cards";
@@ -44,29 +44,34 @@ export default function Dashboard() {
 
   return (
     <DashboardLayout>
-      {!isAuthenticated ? <></> : 
-      <Typography sx={{
-        mb:2
-      }} variant="h5">
-        Bem-vindo {indexInfo.name + " " + indexInfo.surName} 👋
-      </Typography>
+      {!isAuthenticated ? <></> :
+        <Typography sx={{
+          mb:2
+        }} variant="h5">
+          Bem-vindo {indexInfo.name + " " + indexInfo.surName} 👋
+        </Typography>
       }
+      <Box sx={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+      }}>
+        <Grid container spacing={2}>
 
-      <Grid container spacing={2}>
+          <SmallCard title="Entradas" value={mapDecimals(indexInfo.profit)} />
 
-        <SmallCard title="Entradas" value={mapDecimals(indexInfo.profit)} />
+          <SmallCard title="Saídas" value={mapDecimals(indexInfo.expanses)}/>
 
-        <SmallCard title="Saídas" value={mapDecimals(indexInfo.expanses)}/>
-
-        <SmallCard title="Saldo" value={mapDecimals(indexInfo.balance)}/>
-      </Grid>
-      <Grid container spacing={2} sx={{mt:4}}>
-          <Card sx={{ background: "#1e1e1e", width: "100%" }}>
-            <CardContent>
-              <UsersTable/>
-            </CardContent>
-          </Card>
-      </Grid>
+          <SmallCard title="Saldo" value={mapDecimals(indexInfo.balance)}/>
+        </Grid>
+        <Grid container spacing={2} sx={{mt:4}}>
+            <Card sx={{ background: "#1e1e1e", width: "100%" }}>
+              <CardContent>
+                <UsersTable/>
+              </CardContent>
+            </Card>
+        </Grid>
+      </Box>
     </DashboardLayout>
   );
 }
