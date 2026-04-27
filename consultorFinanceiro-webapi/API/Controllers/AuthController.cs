@@ -26,7 +26,6 @@ namespace consultorFinanceiro_webapi.API.Controllers
             {
                 return BadRequest();
             }
-            Console.WriteLine("Recebi login");
             var token = await _authService.LoginAsync(login);
 
             Console.WriteLine(token);
@@ -38,7 +37,7 @@ namespace consultorFinanceiro_webapi.API.Controllers
 
             var userInfo = await _authService.GetUserAsync(login.Login);
 
-            return Ok(new { token.Data, userInfo });
+            return Ok(new { token.Data, userInfo.Data });
         }
         [HttpPost]
         [Route("register")]
