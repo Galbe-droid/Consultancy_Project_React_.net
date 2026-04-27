@@ -9,6 +9,7 @@ namespace consultorFinanceiro_webapi.API.Mapping
         {
             return new ReturnUser
             {
+                Id = user.Id,
                 Email = user.Email,
                 Username = user.Username,
                 Name = user.Name,
