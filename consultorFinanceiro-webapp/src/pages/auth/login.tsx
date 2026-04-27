@@ -19,7 +19,7 @@ export default function Login() {
 
     try {
       const res = await api.post("/auth/login", login);
-      console.log(res.data.data.userInfo);
+      console.log(res.data.userInfo);
       signin(res.data.data, res.data.data.userInfo);
       navigate("/");
     } catch (err) {
