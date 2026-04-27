@@ -61,7 +61,7 @@ dotnet run
 ### Frontend `.env`
 
 ```env
-VITE_API_URL=http://localhost:7173
+VITE_API_URL=
 ```
 
 ### Backend `.env`
@@ -72,6 +72,24 @@ JwtSettings__Secret=
 JwtSettings__Issuer=
 JwtSettings__Audience=
 ```
+
+### Index
+![Index](docs/Index.JPG)
+
+### Dashboard
+![Dashboard](docs/Dashboard.JPG)
+
+### Add Transaction
+![AddTransaction](docs/AddTransaction.JPG)
+
+### Add Category
+![AddCategory](docs/AddCategory.JPG)
+
+### List Transaction
+![ListTransaction](docs/ListTransaction.JPG)
+
+### List Category
+![ListCategory](docs/ListCategory.JPG)
 
 ---
 
