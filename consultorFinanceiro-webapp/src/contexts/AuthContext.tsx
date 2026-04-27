@@ -54,7 +54,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const deleteAccount = async(id: string) => {
         try{
             await api.delete(`/Auth/delete/${id}`);
-            //logout();
+            logout();
         }catch(err){
             console.error(err);
         }
