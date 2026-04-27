@@ -53,7 +53,7 @@ export default function Dashboard() {
       }
       <Box sx={{
         display: 'flex',
-        direction: 'column',
+        flexDirection: "column",
         justifyContent: 'space-between',
         alignItems: 'center',
       }}>
