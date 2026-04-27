@@ -20,7 +20,7 @@ export default function Login() {
     try {
       const res = await api.post("/auth/login", login);
       console.log(res.data);
-      signin(res.data.data, res.data.data.userInfo);
+      signin(res.data.token, res.data.userInfo);
       navigate("/");
     } catch (err) {
       setError("Email ou senha inválidos " + (err as Error).message);
