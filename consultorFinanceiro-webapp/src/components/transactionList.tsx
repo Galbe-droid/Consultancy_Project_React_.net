@@ -61,10 +61,11 @@ export default function TransactionList({ transactions, reloadTransactions }: Pr
                             <TableCell>
                                 <Button
                                     sx={{
-                                        border: "0px"
+                                        border: "0px",
+                                        color:"#fff"
                                     }}
                                     variant="outlined"
-                                    color="#fff"
+
                                     onClick={() => {getTransaction(t.id);}}
                                 >
                                     Atualizar
@@ -73,10 +74,10 @@ export default function TransactionList({ transactions, reloadTransactions }: Pr
                             <TableCell>
                                 <Button
                                     sx={{
-                                        border: "0px"
+                                        border: "0px",
+                                        color:"#fff162a"
                                     }}
                                     variant="outlined"
-                                    color="#ff162a"
                                     onClick={async() => {if (!window.confirm(`Excluir "${t.title}"?`)) return;
                                                     await deleteTransaction(t.id);
                                                     await reloadTransactions();}}

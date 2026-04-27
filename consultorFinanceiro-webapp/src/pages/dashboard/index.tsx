@@ -37,7 +37,9 @@ export default function Dashboard() {
   return (
     <DashboardLayout>
       {!isAuthenticated ? <></> : 
-      <Typography variant="h5" mb={2}>
+      <Typography sx={{
+        mb:2
+      }} variant="h5">
         Bem-vindo {indexInfo.name + " " + indexInfo.surName} 👋
       </Typography>
       }
@@ -50,7 +52,7 @@ export default function Dashboard() {
 
         <SmallCard title="Saldo" value={mapDecimals(indexInfo.balance)}/>
 
-        <Grid item xs={12} md={4}>
+        <Grid size={{ xs:12, md:4 }}>
           <Card sx={{ background: "#1e1e1e" }}>
             <CardContent>
               <UsersTable/>

@@ -34,7 +34,9 @@ export default function Login() {
   return (
     <AuthLayout>
       <Box sx={{ width: 350 }}>
-        <Typography variant="h5" mb={2}>
+        <Typography sx={{
+          mb:2
+        }} variant="h5">
           Login
         </Typography>
 

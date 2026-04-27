@@ -272,10 +272,10 @@ export default function CreateTransactionModal({open, onClose, update, reloadTra
                             fullWidth
                             label="Categoria"
                             margin="normal"
-                            value={choosenCategoryId}
-                            onChange={(e) => setChoosenCategoryId(e.target.value)}
+                            value={choosenCategoryId ?? ""}
+                            onChange={(e) => setChoosenCategoryId(e.target.value || null)}
                         >
-                            <MenuItem key={0} value={null}>
+                            <MenuItem key={0} value="">
                                 Nenhuma categoria
                             </MenuItem>
                             {minimalCategories.map((cat: MinimalCategoryDto) => (

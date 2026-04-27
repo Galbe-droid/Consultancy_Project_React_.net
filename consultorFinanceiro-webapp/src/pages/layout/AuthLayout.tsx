@@ -1,6 +1,11 @@
 import { Box } from "@mui/material";
+import type {ReactNode} from "react";
 
-export default function AuthLayout({ children }) {
+type AuthLayoutProps = {
+    children: ReactNode;
+};
+
+export default function AuthLayout({ children }:AuthLayoutProps) {
   return (
     <Box sx={{ display: "flex", height: "100vh" }}>
       <Box

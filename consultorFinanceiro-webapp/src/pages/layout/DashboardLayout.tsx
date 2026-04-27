@@ -3,9 +3,13 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import { useAuth } from "../../hooks/useAuth";
 import CreateCategoryModal from "../../components/Modals/createCategoryModal.tsx";
 import CreateTransactionModal from "../../components/Modals/createTransactionModal.tsx";
-import {useState} from "react";
+import {type ReactNode, useState} from "react";
 
-export default function DashboardLayout({ children }) {
+type DashboardProps = {
+    children: ReactNode
+}
+
+export default function DashboardLayout({ children }: DashboardProps) {
   const {logout} = useAuth();
   const [openTransaction, setOpenTransaction] = useState(false);
   const [openCategory, setOpenCategory] = useState(false);
