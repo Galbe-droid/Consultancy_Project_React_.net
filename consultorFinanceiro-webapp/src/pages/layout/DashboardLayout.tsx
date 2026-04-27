@@ -92,7 +92,7 @@ export default function DashboardLayout({ children }: DashboardProps) {
                     color: "#fff"
                 }}
                 variant="outlined"
-                href={"/categorias"}
+                onClick={() => setOpenAccountModal(true)}
             >
                 Conta
             </Button>
