@@ -36,8 +36,13 @@ namespace consultorFinanceiro_webapi.API.Controllers
             }
 
             var userInfo = await _authService.GetUserAsync(login.Login);
+            
+            if (userInfo.Data == null)
+            {
+                return Unauthorized();
+            }
 
-            return Ok(new { token.Data, userInfo.Data });
+            return Ok(new { token = token.Data, userInfo = userInfo.Data });
         }
         [HttpPost]
         [Route("register")]
