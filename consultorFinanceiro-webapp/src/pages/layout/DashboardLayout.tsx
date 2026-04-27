@@ -32,20 +32,20 @@ export default function DashboardLayout({ children }) {
         <Stack sx={{direction:"column", spacing:2, mb:3, gap:4 }}>
             <Button
                 sx={{
-                    border: "0px"
+                    border: "0px",
+                    color: "#fff"
                 }}
                 variant="outlined"
-                color="#fff"
                 href={"/"}
             >
                 Inicio
             </Button>
             <Button
                 sx={{
-                    border: "0px"
+                    border: "0px",
+                    color: "#fff"
                 }}
                 variant="outlined"
-                color="#fff"
                 onClick={() => setOpenTransaction(true)}
             >
               + Nova Transação
@@ -53,10 +53,10 @@ export default function DashboardLayout({ children }) {
 
             <Button
                 sx={{
-                    border: "0px"
+                    border: "0px",
+                    color: "#fff"
                 }}
                 variant="outlined"
-                color="#fff"
                 onClick={() => setOpenCategory(true)}
             >
               + Nova Categoria
@@ -64,20 +64,20 @@ export default function DashboardLayout({ children }) {
 
             <Button
                 sx={{
-                    border: "0px"
+                    border: "0px",
+                    color: "#fff"
                 }}
                 variant="outlined"
-                color="#fff"
                 href={"/transacoes"}
             >
                 Lista Transações
             </Button>
             <Button
                 sx={{
-                    border: "0px"
+                    border: "0px",
+                    color: "#fff"
                 }}
                 variant="outlined"
-                color="#fff"
                 href={"/categorias"}
             >
                 Lista Categorias

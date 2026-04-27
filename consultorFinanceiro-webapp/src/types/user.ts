@@ -11,6 +11,13 @@ export interface RegisterUser{
     surName:string; 
 }
 
+export interface AuthUser{
+    username:string;
+    email:string;
+    name:string;
+    surName:string;
+}
+
 export interface userList{
     id:string;
     name:string;

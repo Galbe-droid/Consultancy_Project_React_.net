@@ -21,14 +21,16 @@ export default function Dashboard() {
 
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setIndexInfo({
-      name: user.name,
-      surName: user.surName,
-      profit: minimalTransactions.reduce((acc, t) => { return t.transactionType === 0 ? acc + t.amount : acc;}, 0),
-      expanses: minimalTransactions.reduce((acc, t) => { return t.transactionType === 1 ? acc + t.amount : acc;}, 0),
-      balance: minimalTransactions.reduce((acc, t) => { return t.transactionType === 0 ? acc + t.amount : acc - t.amount}, 0)
-    });
+    if(user){
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setIndexInfo({
+        name: user.name,
+        surName: user.surName,
+        profit: minimalTransactions.reduce((acc, t) => { return t.transactionType === 0 ? acc + t.amount : acc;}, 0),
+        expanses: minimalTransactions.reduce((acc, t) => { return t.transactionType === 1 ? acc + t.amount : acc;}, 0),
+        balance: minimalTransactions.reduce((acc, t) => { return t.transactionType === 0 ? acc + t.amount : acc - t.amount}, 0)
+      });
+    }
     getMinimalTransactions().then(setMinimalTransactions);
   }, [minimalTransactions, user])
 

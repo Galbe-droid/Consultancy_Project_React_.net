@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { createContext, useState } from "react";
 import api from "../api/api";
-import type { RegisterUser } from "../models/User";
+import type { RegisterUser } from "../types/user.ts";
+import type {AuthUser} from "../types/user.ts";
 
 type AuthContextType = {
   isAuthenticated: boolean;
@@ -24,7 +25,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
     const login = (token: string, userInfo: AuthUser) => {
         try{            
-            localStorage.setItem("userInfo", JSON.stringify(userInfo.data))
+            localStorage.setItem("userInfo", JSON.stringify(userInfo));
             localStorage.setItem("token", token);   
             setUser(userInfo)         
             setIsAuthenticated(true);

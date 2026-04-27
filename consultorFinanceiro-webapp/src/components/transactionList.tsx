@@ -3,7 +3,7 @@ import {mapDecimals, mapFormatDate} from "../mapper/mapper.tsx";
 import type { ReturnTransaction } from "../types/transaction";
 import {deleteTransaction, getTransactionById} from "../services/transactionService.tsx";
 import CreateTransactionModal from "./Modals/createTransactionModal.tsx";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 
 type Props = {
     transactions: ReturnTransaction[];

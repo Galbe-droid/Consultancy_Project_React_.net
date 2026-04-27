@@ -2,7 +2,7 @@ import {Button, Chip, Paper, Table, TableBody, TableCell, TableHead, TableRow} f
 import type {ReturnCategory} from "../types/category.ts";
 import {useState} from "react";
 import {mapFormatDate} from "../mapper/mapper.tsx";
-import {deleteCategory, getCategoryById, updateCategory} from "../services/categoryService.tsx";
+import {deleteCategory, getCategoryById} from "../services/categoryService.tsx";
 import CreateCategoryModal from "./Modals/createCategoryModal.tsx";
 
 type Props = {

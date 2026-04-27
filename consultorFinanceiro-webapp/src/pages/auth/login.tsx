@@ -9,7 +9,7 @@ import api from "../../api/api";
 
 export default function Login() {
   const [login, setLogin] = useState<LoginUser>({login: "", password: ""});
-  const [error, setError] = useState(false);
+  const [error, setError] = useState("");
   const navigate = useNavigate();
   const [registerOpen, setRegisterOpen] = useState(false);
   const {login: signin} = useAuth();

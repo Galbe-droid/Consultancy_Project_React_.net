@@ -1,7 +1,7 @@
 import type {CategoryDto, MinimalCategoryDto, ReturnCategory} from "../types/category.ts";
 import api from "../api/api.ts";
 
-export const getAllCategories = async (): Promise<CategoryDto[]> => {
+export const getAllCategories = async (): Promise<ReturnCategory[]> => {
     const response = await api.get("/category");
     return response.data.data;
 }

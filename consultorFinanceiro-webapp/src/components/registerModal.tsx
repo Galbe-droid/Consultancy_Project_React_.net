@@ -1,7 +1,6 @@
 import { Dialog, DialogTitle, DialogContent, TextField, Button, DialogActions, } from "@mui/material";
 import React, { useState } from "react";
 import type {RegisterUser} from "../types/user.ts";
-import {createTransaction} from "../services/transactionService.tsx";
 import {useAuth} from "../hooks/useAuth.ts";
 import AlertSnackBar from "./alertSnackBar.tsx";
 
@@ -92,8 +91,6 @@ export default function RegisterModal({ open, onClose } : Props) {
       console.log(result);
       if (!result.success) {
         const errors = result.errors;
-
-        let message = "Erro ao criar conta.";
 
         if (errors?.email?.length) {
           setFormError((prev) => ({...prev, email: errors?.email}));
