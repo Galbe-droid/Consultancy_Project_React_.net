@@ -60,14 +60,12 @@ export default function Dashboard() {
 
         <SmallCard title="Saldo" value={mapDecimals(indexInfo.balance)}/>
       </Grid>
-      <Grid container spacing={2} sx={{mt:4, width:'100%'}}>
-        <Grid size={{ xs:12, md:4 }}>
-          <Card sx={{ background: "#1e1e1e" }}>
+      <Grid container spacing={2} sx={{mt:4}}>
+          <Card sx={{ background: "#1e1e1e", width: "100%" }}>
             <CardContent>
               <UsersTable/>
             </CardContent>
           </Card>
-        </Grid>
       </Grid>
     </DashboardLayout>
   );
