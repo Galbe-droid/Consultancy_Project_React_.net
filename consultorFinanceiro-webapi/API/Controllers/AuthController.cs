@@ -42,7 +42,7 @@ namespace consultorFinanceiro_webapi.API.Controllers
                 return Unauthorized();
             }
 
-            return Ok(new { token.Data,userInfo });
+            return Ok(new { token = token.Data, userInfo = userInfo.Data });
         }
         [HttpPost]
         [Route("register")]
