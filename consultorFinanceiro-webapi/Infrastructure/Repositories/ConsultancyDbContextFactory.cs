@@ -14,7 +14,7 @@ namespace consultorFinanceiro_webapi.Infrastructure.Repositories
             var connection = Environment.GetEnvironmentVariable("ConnectionStrings__DefaultConnection");
 
             var optionsBuilder = new DbContextOptionsBuilder<ConsultancyDBContext>();
-            optionsBuilder.UseSqlServer(connection);
+            optionsBuilder.UseNpgsql(connection);
 
             return new ConsultancyDBContext(optionsBuilder.Options);
         }
