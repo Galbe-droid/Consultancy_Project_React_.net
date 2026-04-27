@@ -13,7 +13,7 @@ type Props = {
     open: boolean,
     onClose: () => void,
     update: ReturnTransaction | null,
-    reloadTransaction: () => Promise<void> | null,
+    reloadTransaction?: () => Promise<void>,
 };
 
 export default function CreateTransactionModal({open, onClose, update, reloadTransaction}: Props) {
@@ -153,7 +153,7 @@ export default function CreateTransactionModal({open, onClose, update, reloadTra
                 setLoading(false);
                 return;
             }
-            if(update != null){
+            if(update != null && reloadTransaction != undefined){
                 const payload = {
                     ...transactionForm,
                     amount: Number(amountString.replace(",", ".")),

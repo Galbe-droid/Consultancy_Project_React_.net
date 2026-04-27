@@ -8,7 +8,7 @@ type Props = {
     open: boolean,
     onClose: () => void,
     update: ReturnCategory | null,
-    reloadCategories: () => Promise<void> | null,
+    reloadCategories?: () => Promise<void>,
 };
 
 export default function CreateCategoryModal({open, onClose, update, reloadCategories}: Props) {
@@ -84,7 +84,7 @@ export default function CreateCategoryModal({open, onClose, update, reloadCatego
                 setLoading(false);
                 return;
             }
-            if(update != null){
+            if(update != null && reloadCategories != undefined){
                 await updateCategory(categoryForm, update.id);
                 await reloadCategories();
                 setSnackMessage("Categoria atualizada com sucesso!");

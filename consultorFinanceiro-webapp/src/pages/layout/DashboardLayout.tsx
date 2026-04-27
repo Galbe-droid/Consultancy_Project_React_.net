@@ -83,7 +83,7 @@ export default function DashboardLayout({ children }) {
                 Lista Categorias
             </Button>
         </Stack>
-        <CreateCategoryModal open={openCategory} onClose={() => setOpenCategory(false)} update={null}/>
+        <CreateCategoryModal open={openCategory} onClose={() => setOpenCategory(false)} update={null} />
         <CreateTransactionModal open={openTransaction} onClose={() => setOpenTransaction(false)} update={null}/>
         <Button
           variant="contained"
