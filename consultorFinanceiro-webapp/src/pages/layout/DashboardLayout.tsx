@@ -4,6 +4,7 @@ import { useAuth } from "../../hooks/useAuth";
 import CreateCategoryModal from "../../components/Modals/createCategoryModal.tsx";
 import CreateTransactionModal from "../../components/Modals/createTransactionModal.tsx";
 import {type ReactNode, useState} from "react";
+import {AccountModal} from "../../components/Modals/accountModal.tsx";
 
 type DashboardProps = {
     children: ReactNode
@@ -13,6 +14,7 @@ export default function DashboardLayout({ children }: DashboardProps) {
   const {logout} = useAuth();
   const [openTransaction, setOpenTransaction] = useState(false);
   const [openCategory, setOpenCategory] = useState(false);
+  const [openAccountModal, setOpenAccountModal] = useState(false);
   
   return (
     <Box sx={{ display: "flex" }}>
@@ -54,7 +56,6 @@ export default function DashboardLayout({ children }: DashboardProps) {
             >
               + Nova Transação
             </Button>
-
             <Button
                 sx={{
                     border: "0px",
@@ -65,7 +66,6 @@ export default function DashboardLayout({ children }: DashboardProps) {
             >
               + Nova Categoria
             </Button>
-
             <Button
                 sx={{
                     border: "0px",
@@ -86,7 +86,18 @@ export default function DashboardLayout({ children }: DashboardProps) {
             >
                 Lista Categorias
             </Button>
+            <Button
+                sx={{
+                    border: "0px",
+                    color: "#fff"
+                }}
+                variant="outlined"
+                href={"/categorias"}
+            >
+                Conta
+            </Button>
         </Stack>
+        <AccountModal open={openAccountModal} onClose={() => setOpenAccountModal(false)}/>
         <CreateCategoryModal open={openCategory} onClose={() => setOpenCategory(false)} update={null} />
         <CreateTransactionModal open={openTransaction} onClose={() => setOpenTransaction(false)} update={null}/>
         <Button
