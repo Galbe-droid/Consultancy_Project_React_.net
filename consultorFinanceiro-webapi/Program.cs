@@ -60,7 +60,7 @@ builder.Services.AddSwaggerGen(options =>
 
 builder.Services.AddDbContext<ConsultancyDBContext>(options =>
     {
-        options.UseSqlServer(connection!);
+        options.UseNpgsql(connection!);
     }
 );
 
