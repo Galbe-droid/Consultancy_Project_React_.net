@@ -19,6 +19,7 @@ export default function Login() {
 
     try {
       const res = await api.post("/auth/login", login);
+      console.log(res);
       signin(res.data.data, res.data.userInfo);
       navigate("/");
     } catch (err) {
